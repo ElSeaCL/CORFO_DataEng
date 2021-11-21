@@ -1,4 +1,4 @@
-#!/home/sebaegg/anaconda3/bin/python python
+#!/home/sebaegg/anaconda3/bin/python
 # coding: utf-8
 
 # ---
