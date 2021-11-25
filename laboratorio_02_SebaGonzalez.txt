@@ -1,0 +1,138 @@
+#!/home/sebaegg/anaconda3/bin/python
+# coding: utf-8
+
+# # Métodos Avanzados
+
+# #### 1. Sea la siguiente lista de valores. Utilizando List Comprehension, cree una 
+# nueva lista con los mismo elementos que la primera
+print('Ejercicio 1: List Comprehension')
+
+lista1 = list(range(10))
+lista2 = [x for x in lista1]
+
+print(lista2)
+print('\n')
+
+# #### 2. Sea la siguiente lista de valores. Utilizando List Comprehension, cree una 
+# lista que corresponde a los cuadrados de los valores de la lista original
+print('Ejercicio 2: List Comprehension')
+
+lista1 = [22, 33, 44, 55, 66, 77]
+lista2 = [x**2 for x in lista1]
+
+print(lista2)
+print('\n')
+
+# #### 3. Sea la siguiente lista de valores. Utilizando List Comprehension, cree una 
+# nueva lista con los cuadrados de los valores de la lista original, siempre y cuando 
+# sea menor de 50
+print('Ejercicio 3: List Comprehension')
+
+lista1 = [2, 4, 6, 8, 10, 12, 14]
+lista2 = [x**2 for x in lista1 if x**2 < 50]
+
+print(lista2)
+print('\n')
+
+# #### 4. Sea la siguiente lista de valores. Cree una lista con las frutas que tienen sólo 2 vocales
+print('Ejercicio 4: filter')
+
+fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
+
+def numVocales(str):
+  '''
+  Devuelve True si la palabra tiene dos vocales.
+  '''
+  counter = 0
+  vocales = 'aeiou'
+
+  for char in str:
+    if char in vocales:
+      counter += 1
+
+  if counter == 2:
+    return True
+  else:
+    return False
+
+vocal_fruits = list(filter(numVocales, fruits))
+print(vocal_fruits)
+print('\n')
+
+# #### 5. Sea el siguiente diccionario. Utilizando List Comprehension, construya una 
+# lista con los nombres de los vehículos con letras mayúsculas, de aquellos cuyo 
+# valor (peso) está bajo 5000 kilogramos
+print('Ejercicio 5: List Comprehension')
+
+dict={"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600, "Van": 2400, "Semi": 13600, "Bicycle": 7, "Motorcycle": 110}
+list1 = [x.upper() for (x,y) in dict.items() if y < 5000]
+
+print(list1)
+print('\n')
+
+# #### 6. Cree un listado con todos los números en el rango de 1 a 100 que son divisibles por 7
+print('Ejercicio 6: Listado de divisibles por 7')
+list1 = [x for x in range(1,101) if x % 7 == 0]
+
+print(list1)
+print('\n')
+
+# #### 7. Sea la siguiente sentencia. Utilice List Comprehension para crear un listado de las 
+# palabras que tienen menos de 5 letras en la sentencia
+print('Ejercicio 7: Mas List Comprehension')
+
+sentencia = 'Practicar problemas para taladrar List Comprehension en tu cabeza'
+list1 = [x for x in sentencia.split() if len(x) < 5]
+
+print(list1)
+print('\n')
+
+# #### 8. Use Dictionary Comprehension para contar el largo de cada palabra en la siguiente sentencia
+print('Ejercicio 8: Dict Comprehension')
+
+sentencia = 'Practicar problemas para taladrar List Comprehension en tu cabeza'
+dict1 = {x:len(x) for x in sentencia.split()}
+
+print(dict1)
+print('\n')
+
+# #### 9. Sea la siguiente rutina de Python. Reescríbala utilizando List Comprehension
+print('Ejercicio 9: REescribir en lista')
+
+sentence = "the quick brown fox jumps over the lazy dog"
+
+words = sentence.split()
+word_lengths = []
+for word in words:
+      if word != "the":
+          word_lengths.append(len(word))
+print(words)
+print(word_lengths)
+
+list1 = [len(x) for x in sentence.split() if x != 'the']
+
+print(list1)
+print('\n')
+
+# #### 10. Reescriba el siguiente código utilizando List Comprehension
+print('Ejercicio 10: Una vez mas list comprehension')
+
+numbers = [3,5,45,97,32,22,10,19,39,43]
+
+result = []
+for number in numbers:
+  if number % 2 == 0:
+    result.append(number)
+print(result)
+
+list1 = [x for x in numbers if x % 2 == 0]
+
+print(list1)
+print('\n')
+
+# #### 11. The Big Boss: Determine los números primos entre 1 y 100 utilizando solamente list comprehension
+print('Ejercicio 11: Obtener numeros primos')
+
+primos = [x for x in range(1,101) if 0 not in [x%y for y in range(2,x)]]
+
+print(primos)
